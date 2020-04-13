@@ -3,7 +3,7 @@ import string
 text_from_file = open('text.txt','r',encoding='UTF8')
 text_to_program = text_from_file.read()
 text_from_file.close()
-# print(text_to_program)
+print(text_to_program)
 
 # 1) методами строк очистить текст от знаков препинания
 
@@ -14,7 +14,7 @@ text_without_marks = text_to_program
 for item in list_marks:
     text_without_marks = text_without_marks.replace(item,'')
 
-# print(text_without_marks)
+print(text_without_marks)
 
 # 2) сформировать list со словами (split)
 
@@ -53,7 +53,6 @@ morph = pymorphy2.MorphAnalyzer()
 
 lim_list_split = list(map(lambda word: morph.parse(word)[0].normal_form, lower_list))
 print(lim_list_split)
-
 # удаляем повторяющиеся слова
 lim_list_split = list(dict.fromkeys(lim_list_split))
 print(lim_list_split)
